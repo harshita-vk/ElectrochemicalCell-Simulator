@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Electrochemical Cell Simulator</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Electrochemical Cell Simulator</h1>
+
+    <div class="row">
+      <button onclick="showGalvanic()">Galvanic Cell</button>
+      <button onclick="showConcentration()">Concentration Cell</button>
+    </div>
+
+    <!-- Galvanic Form -->
+    <div id="galvanicForm" class="hidden">
+      <div class="row">
+        <label for="anode">Anode (Metal / Electrolyte):</label>
+        <select id="anode">
+          <option value="Zn">Zinc / Zn²⁺</option>
+          <option value="Cu">Copper / Cu²⁺</option>
+          <option value="Fe">Iron / Fe²⁺</option>
+          <option value="Ag">Silver / Ag⁺</option>
+          <option value="Pb">Lead / Pb²⁺</option>
+          <option value="Ni">Nickel / Ni²⁺</option>
+        </select>
+      </div>
+      <div class="row">
+        <label for="cathode">Cathode (Metal / Electrolyte):</label>
+        <select id="cathode">
+          <option value="Zn">Zinc / Zn²⁺</option>
+          <option value="Cu">Copper / Cu²⁺</option>
+          <option value="Fe">Iron / Fe²⁺</option>
+          <option value="Ag">Silver / Ag⁺</option>
+          <option value="Pb">Lead / Pb²⁺</option>
+          <option value="Ni">Nickel / Ni²⁺</option>
+        </select>
+      </div>
+      <div class="row">
+        <input type="number" id="anodeConcentration" placeholder="Anode Conc. (mol/L)" />
+        <input type="number" id="cathodeConcentration" placeholder="Cathode Conc. (mol/L)" />
+      </div>
+      <div class="row">
+        <button onclick="calculateEMF()">⚡ Calculate EMF ⚡</button>
+      </div>
+    </div>
+
+    <!-- Concentration Form -->
+    <div id="concentrationForm" class="hidden">
+      <div class="row">
+        <label for="electrode">Electrode (Metal / Electrolyte):</label>
+        <select id="electrode">
+          <option value="Zn">Zinc / Zn²⁺</option>
+          <option value="Cu">Copper / Cu²⁺</option>
+          <option value="Fe">Iron / Fe²⁺</option>
+          <option value="Ag">Silver / Ag⁺</option>
+          <option value="Pb">Lead / Pb²⁺</option>
+          <option value="Ni">Nickel / Ni²⁺</option>
+        </select>
+      </div>
+      <div class="row">
+        <input type="number" id="lowConc" placeholder="Low Conc. (mol/L)" />
+        <input type="number" id="highConc" placeholder="High Conc. (mol/L)" />
+      </div>
+      <div class="row">
+        <button onclick="calculateEMF()">⚡ Calculate EMF ⚡</button>
+      </div>
+    </div>
+
+    <div id="result" class="row"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
